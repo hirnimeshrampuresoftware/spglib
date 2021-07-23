@@ -86,7 +86,7 @@ install:
     ls dist/;
     cd ..;
     #fi;
-  fi
+  fi;
 
 script:
 - pwd
