@@ -74,7 +74,7 @@ before_install:
 install:
 - pwd
 - if [[ "$DOCKER_DEPLOY" != "false" ]]; then
-    if [[ "$TRAVIS_BRANCH" == "rc" ]] || [[ "$TRAVIS_BRANCH" == "master" ]]; then
+    #if [[ "$TRAVIS_BRANCH" == "rc" ]] || [[ "$TRAVIS_BRANCH" == "master" ]]; then
       docker pull $DOCKER_IMAGE;
       cd python;
       cp -a ../src .;
@@ -85,7 +85,7 @@ install:
       pwd;
       ls dist/;
       cd ..;
-    fi;
+    #fi;
   fi
 
 script:
