@@ -23,7 +23,10 @@ matrix:
          TRAVIS_PYTHON_VERSION='3.6'
          PLAT=manylinux2010_x86_64
   - python: '3.6'
-    arch: arm64
+    arch: arm64-graviton2
+    group: edge
+    dist: focal
+    virt: vm
     services:
       - docker
     env: DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
