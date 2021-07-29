@@ -12,8 +12,8 @@ function repair_wheel {
 
 for PYBIN in /opt/python/*/bin; do
     if [[ $PYBIN == *"36"* ]] || [[ $PYBIN == *"37"* ]] || [[ $PYBIN == *"38"* ]] || [[ $PYBIN == *"39"* ]]; then
-        "${PYBIN}/pip" install -r ./dev-requirements.txt
-        "${PYBIN}/pip" wheel ./ -w wheelhouse/
+        "${PYBIN}/pip" install -r /io/dev-requirements.txt
+        "${PYBIN}/pip" wheel /io/ -w wheelhouse/
     fi
 done
 
