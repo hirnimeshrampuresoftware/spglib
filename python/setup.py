@@ -93,12 +93,12 @@ extension = Extension('spglib._spglib',
                       extra_link_args=extra_link_args,
                       define_macros=define_macros)
 
-#version_nums = [None, None, None]
-#with open(os.path.join(source_dir, "version.h")) as w:
- #   for line in w:
-  #      for i, chars in enumerate(("MAJOR", "MINOR", "MICRO")):
-   #         if chars in line:
-    #            version_nums[i] = int(line.split()[2])
+version_nums = [None, None, None]
+with open(os.path.join(source_dir, "version.h")) as w:
+    for line in w:
+        for i, chars in enumerate(("MAJOR", "MINOR", "MICRO")):
+            if chars in line:
+                version_nums[i] = int(line.split()[2])
 
 # To deploy to pypi by travis-CI
 nanoversion = 0
