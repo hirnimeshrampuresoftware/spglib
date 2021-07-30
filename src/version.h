@@ -32,11 +32,11 @@
 /* ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE */
 /* POSSIBILITY OF SUCH DAMAGE. */
 
-#ifndef __version_H__
-#define __version_H__
+ifndef __version_H__
+define __version_H__
 
-#define SPGLIB_MAJOR_VERSION 1
-#define SPGLIB_MINOR_VERSION 16
-#define SPGLIB_MICRO_VERSION 1
+define SPGLIB_MAJOR_VERSION 1
+define SPGLIB_MINOR_VERSION 16
+define SPGLIB_MICRO_VERSION 1
 
-#endif
+endif
