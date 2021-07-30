@@ -30,7 +30,7 @@ jobs:
       with:
         python-versions: 'cp36-cp36m cp37-cp37m cp38-cp38 cp39-cp39'
         build-requirements: 'numpy pyyaml'
-        pre-build-command: pwd
+        pre-build-command: cp -a ../src .
         package-path: ./python
         
     - name: Build manylinux Python wheels
