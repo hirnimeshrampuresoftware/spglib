@@ -65,9 +65,8 @@ jobs:
         pre-build-command: cp -a ../src .
         package-path: ./python        
         
-    - name: Publish wheels to PyPI
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        twine upload ./python/dist/*-manylinux*.whl
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: ./python/dist/*-manylinux*.whl
