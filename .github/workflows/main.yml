@@ -8,17 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     strategy:    
       matrix:
-        platform:
-          #- manylinux1_x86_64
-          #- manylinux1_i686
-          - manylinux2014_x86_64
-          #- manylinux2014_aarch64  
+        platform: [manylinux1, manylinux2014]
+        arch: [x86_64, i686, aarch64]
+        exclude:
+          - platform: manylinux1
+            arch: aarch64
+          - platform: manylinux2014
+            arch: i686      
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
     
     - name: Set up QEMU
-      if: ${{ matrix.platform == 'manylinux2014_aarch64' }}
+      if: ${{ matrix.platform == 'manylinux2014' &&  matrix.arch == aarch64 }}
       uses: docker/setup-qemu-action@v1
       
     - name: Set up Python
