@@ -62,7 +62,7 @@ jobs:
     - name: Check created wheel
       run: |
         pip install -f python/dist --no-index spglib
-        pip install numpy pytest
+        pip install pytest
         cd python
         pytest
         
