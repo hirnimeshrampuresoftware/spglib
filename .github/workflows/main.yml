@@ -61,6 +61,7 @@ jobs:
         
     - name: Check created wheel
       run: |
+        pip install pytest
         cd python
         pytest
         
