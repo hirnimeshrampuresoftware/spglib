@@ -75,6 +75,7 @@ jobs:
           cd dist
           ls
           pip install -f --no-index spglib
+          cd ../python
           pytest
  #     - name: Publish package to TestPyPI
   #      if: startsWith(github.ref, 'refs/heads/rc')
