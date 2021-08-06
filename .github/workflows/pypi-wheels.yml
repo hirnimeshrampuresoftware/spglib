@@ -1,10 +1,6 @@
 name: Spglib PyPI Wheel builds
 
-on:
-  push:
-    branches:
-      - rc
-      - rctest
+on: [push]
 
 jobs:
   build-wheel:
