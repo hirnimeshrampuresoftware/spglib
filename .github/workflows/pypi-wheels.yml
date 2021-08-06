@@ -74,7 +74,7 @@ jobs:
         run: |
           cd dist
           ls
-          pip install -f --no-index spglib
+          pip install -f spglib-*
           cd ../python
           pytest
  #     - name: Publish package to TestPyPI
