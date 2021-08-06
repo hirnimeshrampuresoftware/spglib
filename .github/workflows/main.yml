@@ -68,10 +68,11 @@ jobs:
         
     - name: Check created wheel
       run: |
-        export PATH=/opt/python/${{ matrix.py-ver }}/bin:$PATH &&
-        pip install -f python/dist spglib
-        cd python
-        pytest
+        #export PATH=/opt/python/${{ matrix.py-ver }}/bin:$PATH &&
+        #pip install -f python/dist spglib
+        cd python/dist
+        ls
+        #pytest
         
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
