@@ -70,9 +70,14 @@ jobs:
           mkdir dist
           cp ./python/dist/*manylinux*whl dist
           
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+        
       - name: check wheels
         run: |
-          /opt/python/${{ matrix.python-version }}/bin/python -m venv .env
+          python -m venv .env
           source .env/bin/activate
           cd dist
           ls
