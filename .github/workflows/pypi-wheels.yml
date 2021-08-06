@@ -72,11 +72,14 @@ jobs:
           
       - name: check wheels
         run: |
+          /opt/python/${{ matrix.python-version }}/bin/python -m venv .env
+          source .env/bin/activate
           cd dist
           ls
-          /opt/python/${{ matrix.python-version }}/bin/python -m pip install spglib-*
+          pip install spglib-*
           cd ../python
-          /opt/python/${{ matrix.python-version }}/bin/python -m pytest
+          pytest
+          deactivate
  #     - name: Publish package to TestPyPI
   #      if: startsWith(github.ref, 'refs/heads/rc')
    #     uses: pypa/gh-action-pypi-publish@release/v1
