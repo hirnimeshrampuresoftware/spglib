@@ -59,6 +59,11 @@ jobs:
         run: |
           mkdir dist
           cp ./python/dist/*manylinux*whl dist
+          
+      - name: check wheels
+        run: |
+          cd dist
+          la
  #     - name: Publish package to TestPyPI
   #      if: startsWith(github.ref, 'refs/heads/rc')
    #     uses: pypa/gh-action-pypi-publish@release/v1
