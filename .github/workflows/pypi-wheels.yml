@@ -77,10 +77,9 @@ jobs:
         
       - name: check wheels
         run: |
-          python -m venv .env
-          source .env/bin/activate
           cd dist
           ls
+          python --version
           pip install spglib-*
           cd ../python
           pytest
