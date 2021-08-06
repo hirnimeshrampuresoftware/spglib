@@ -74,9 +74,9 @@ jobs:
         run: |
           cd dist
           ls
-          ${{ matrix.python-version }} -m pip install spglib-*
+          /opt/python/${{ matrix.python-version }}/bin/python -m pip install spglib-*
           cd ../python
-          ${{ matrix.python-version }} -m pytest
+          /opt/python/${{ matrix.python-version }}/bin/python -m pytest
  #     - name: Publish package to TestPyPI
   #      if: startsWith(github.ref, 'refs/heads/rc')
    #     uses: pypa/gh-action-pypi-publish@release/v1
